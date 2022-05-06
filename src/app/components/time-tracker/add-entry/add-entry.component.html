@@ -1,0 +1,46 @@
+<div class="formWrapper">
+
+  <form [formGroup]="addEntryForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <!--NAME-->
+    <mat-form-field appearance="outline" data-nameInput>
+      <input matInput placeholder="What are you working on?" formControlName="name" required />
+      <mat-icon *ngIf="f.name.valid" matSuffix
+        >sentiment_very_satisfied</mat-icon
+      >
+      <mat-icon *ngIf="f.name.touched && f.name.errors" matSuffix
+        >sentiment_dissatisfied</mat-icon
+      >
+      <mat-error *ngIf="f.name.touched && f.name.errors"
+        >Please add an entry.</mat-error
+      >
+    </mat-form-field>
+
+    <!--PROJECT-->
+    <mat-form-field appearance="outline">    
+      <input matInput placeholder="Test Project" formControlName="project" readonly>    
+    </mat-form-field>
+
+    <!--TIME-->
+    <mat-form-field appearance="outline" data-timeInput>
+      <input matInput type="time" formControlName="time" required />
+      <mat-icon *ngIf="f.time.valid" matSuffix
+        >sentiment_very_satisfied</mat-icon
+      >
+      <mat-icon *ngIf="f.time.touched && f.time.errors" matSuffix
+        >sentiment_dissatisfied</mat-icon
+      >
+      <mat-error *ngIf="f.time.touched && f.time.errors"
+        >Please enter time.</mat-error
+      >
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="addEntryForm.touched && addEntryForm.invalid"
+    >
+      Start
+    </button>
+  </form>
+</div>

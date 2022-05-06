@@ -1,0 +1,13 @@
+<div *ngIf="headerService.header$ | async as header" class="headerWrapper">
+  <ng-container *ngIf="header.mainTitle">
+    <h1>{{ header.mainTitle }}</h1>
+    </ng-container>
+
+  <ng-container *ngIf="header.title">
+    <h1>{{ header.title }}</h1>
+  </ng-container>
+
+  <ng-container *ngIf="header.subtitle">
+    <h1>{{ header.subtitle }}</h1>
+  </ng-container>
+</div>
