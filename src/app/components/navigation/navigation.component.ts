@@ -11,7 +11,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent {
-  isSunIcon = false;
+  isSunIcon = !this.themeService.IsDarkThemeInStorage()
 
   @ViewChild('drawer', { static: true }) matDrawer?: MatSidenav;
 

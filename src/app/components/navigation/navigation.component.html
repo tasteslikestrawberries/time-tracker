@@ -20,7 +20,7 @@
         <a routerLink="/" routerLinkActive="active">Time Tracker</a>
       </span>
 
-      <mat-slide-toggle (change)="toggleDarkTheme($event.checked)">
+      <mat-slide-toggle [ngModel]="!isSunIcon" (change)="toggleDarkTheme($event.checked)">
         <mat-icon *ngIf="!isSunIcon">dark_mode</mat-icon>
         <mat-icon *ngIf="isSunIcon">light_mode</mat-icon>
       </mat-slide-toggle>
@@ -28,6 +28,7 @@
  
     <mat-card class="mat-elevation-z8">
       <router-outlet></router-outlet>
+      <ngx-spinner bdColor = "rgba(237,232,232,0.27)" size = "medium" color = "#a246ff" type = "square-jelly-box" [fullScreen] = "true"></ngx-spinner>
     </mat-card>
 
   </mat-sidenav-content>

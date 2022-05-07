@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TimetrackerService } from 'src/app/shared/services/timetracker.service';
 
 @Component({
   selector: 'app-entry-list',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntryListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private timeTrackerService: TimetrackerService) { }
 
   ngOnInit(): void {
+    this.timeTrackerService.getOrganizationMembership().subscribe(data => console.log(data));
   }
 
 }

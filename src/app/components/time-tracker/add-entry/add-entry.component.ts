@@ -19,12 +19,12 @@ export class AddEntryComponent implements OnInit {
     time: ['', Validators.required],
   });
 
-  get f() { return this.addEntryForm.controls; } //for validators to access form values
+  // for validators to access form values
+  get f() { return this.addEntryForm.controls; } 
 
   constructor(private fb: FormBuilder, private timeTrackerService: TimetrackerService) {}
 
   ngOnInit(): void {
-    console.log(this.addEntryForm);
   }
 
   onSubmit() {

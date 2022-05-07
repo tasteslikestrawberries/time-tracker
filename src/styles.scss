@@ -1,11 +1,8 @@
 @use "@angular/material" as mat;
 @use "/src/app/shared/assets/themes/themes";
-
-@include mat.core(); //include this only once in the app!
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component that you are using.
+@include mat.core(); 
 @include mat.all-component-themes(themes.$light-theme);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .darkMode {
   @include mat.all-component-colors(themes.$dark-theme);
@@ -18,12 +15,14 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mat-card {
   min-height: 90vh;
   margin: 1rem;
+  font-family: unset;
+  font-weight: 400;
 }
 
 @media (max-width: 50rem) {

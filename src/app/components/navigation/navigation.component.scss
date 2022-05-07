@@ -8,6 +8,8 @@
 
 .sidenav .mat-toolbar {
   background: inherit;
+  font-family: unset;
+  font-weight: 400;
 }
 
 .mat-list-base {
@@ -23,6 +25,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  font-family: unset;
 
   a {
     text-decoration: none;
