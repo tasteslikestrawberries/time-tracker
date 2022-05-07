@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { TimetrackerService } from 'src/app/shared/services/timetracker.service';
-import { IEntry } from 'src/app/shared/models/entry.model';
 
 @Component({
   selector: 'app-add-entry',
@@ -11,11 +10,11 @@ import { IEntry } from 'src/app/shared/models/entry.model';
 export class AddEntryComponent implements OnInit {
   @ViewChild(FormGroupDirective) formGroupDirective!: FormGroupDirective;
 
-  entry!: IEntry;
+  entry!: any;
 
   addEntryForm = this.fb.group({
-    name: ['', Validators.required],
-    project: [''],
+    note: ['', Validators.required],
+    service: ['App Development'],
     time: ['', Validators.required],
   });
 
@@ -29,6 +28,7 @@ export class AddEntryComponent implements OnInit {
 
   onSubmit() {
     this.entry = this.addEntryForm.value;
+    this.timeTrackerService.addEntry(this.entry);
     this.formGroupDirective.resetForm() 
   }
 }

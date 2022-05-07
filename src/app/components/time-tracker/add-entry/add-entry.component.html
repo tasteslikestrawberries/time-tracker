@@ -4,21 +4,21 @@
 
     <!--NAME-->
     <mat-form-field appearance="outline" data-nameInput>
-      <input matInput placeholder="What are you working on?" formControlName="name" required />
-      <mat-icon *ngIf="f.name.valid" matSuffix
+      <input matInput placeholder="What are you working on?" formControlName="note" required />
+      <mat-icon *ngIf="f.note.valid" matSuffix
         >sentiment_very_satisfied</mat-icon
       >
-      <mat-icon *ngIf="f.name.touched && f.name.errors" matSuffix
+      <mat-icon *ngIf="f.note.touched && f.note.errors" matSuffix
         >sentiment_dissatisfied</mat-icon
       >
-      <mat-error *ngIf="f.name.touched && f.name.errors"
-        >Please add an entry.</mat-error
+      <mat-error *ngIf="f.note.touched && f.note.errors"
+        >Please add a note.</mat-error
       >
     </mat-form-field>
 
-    <!--PROJECT-->
+    <!--SERVICE-->
     <mat-form-field appearance="outline">    
-      <input matInput placeholder="Test Project" formControlName="project" readonly>    
+      <input matInput placeholder="App Development" formControlName="service" readonly>    
     </mat-form-field>
 
     <!--TIME-->
@@ -34,13 +34,16 @@
         >Please enter time.</mat-error
       >
     </mat-form-field>
-
-    <button
+   
+    <div class="btnWrapper">
+    <button class="addBtn"
+      type="submit"
       mat-raised-button
       color="accent"
       [disabled]="addEntryForm.touched && addEntryForm.invalid"
     >
-      Start
+      Add Entry
     </button>
+  </div>
   </form>
 </div>

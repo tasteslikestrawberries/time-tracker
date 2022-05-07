@@ -1,4 +1,4 @@
-import {Injector} from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -42,7 +42,7 @@ import { FormsModule } from '@angular/forms';
   exports: [
     NgxSpinnerModule
   ],
-  providers: [
+  providers: [DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: SpinnerInterceptor,

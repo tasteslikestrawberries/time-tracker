@@ -7,26 +7,41 @@
 
 form {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 1rem;
+  width: 100%;
+}
+
+.btnWrapper {
+  margin:auto;
+}
+
+.addBtn {
+  font-size:medium;
+  font-weight: 500;
 }
 
 :host::ng-deep .mat-form-field-wrapper {
   padding-bottom: 0;
 }
 
-:host::ng-deep .mat-form-field[data-timeInput] {
-  width: 160px;
-}
-
 :host::ng-deep .mat-error {
   margin-top: 1rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1600px) {
   :host::ng-deep .mat-form-field[data-nameInput] {
     width: 400px;
   }
+
+  form {
+    flex-direction: row;
+    width: unset;
+  }
+
+  :host::ng-deep .mat-form-field[data-timeInput] {
+    width: 160px;
+  }
+  
 }

@@ -1,0 +1,30 @@
+.mat-card{
+  text-align: center;
+  box-shadow: none;
+  padding: unset;
+  margin: unset;
+}
+
+table {
+  width: 100%;
+  background-color: #faf7fe;
+  border:none;
+  box-shadow: 5px 5px 10px 5px #edddfc;
+}
+
+table td, table th {
+  padding: 5px;
+  border: none;
+  text-align: center;
+}
+
+table thead {
+  color: #fff;
+  background-color: #A246FF;
+}
+
+@media (min-width: 800px) {
+  .mat-card{
+    padding: 1rem 5rem;
+  }
+}

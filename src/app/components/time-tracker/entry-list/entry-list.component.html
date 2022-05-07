@@ -1,1 +1,18 @@
-<p>entry-list works!</p>
+<mat-card>
+  <table>
+    <thead>
+      <th>Person ID</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Note</th>
+      <th>Service</th>
+    </thead>
+    <tbody *ngFor="let entry of entries">
+      <td>{{ entry.relationships.person.data.id }}</td>
+      <td>{{ entry.attributes.date }}</td>
+      <td>{{ entry.attributes.time }}</td>
+      <td>{{ entry.attributes.note ? entry.attributes.note : '/' }}</td>
+      <td>{{ serviceName }}</td>
+    </tbody>
+  </table>
+</mat-card>
