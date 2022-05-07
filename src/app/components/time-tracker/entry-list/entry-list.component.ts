@@ -11,6 +11,7 @@ import { TimetrackerService } from 'src/app/shared/services/timetracker.service'
 export class EntryListComponent implements OnInit {
   serviceName = '';
   entries?: EntryModel[];
+  entryId!: string;
   constructor(private timeTrackerService: TimetrackerService) { }
 
   ngOnInit(): void {
@@ -26,7 +27,7 @@ export class EntryListComponent implements OnInit {
       // maps data array to EntryModel[]
       map((apiEntryArray: any) => apiEntryArray.map((entry: any) => new EntryModel(entry)
       )),
-      //tap((v) => console.log(v))
+      tap((v) => console.log(v))
     ).subscribe(entryModelArr => this.entries = entryModelArr)
   }
 
@@ -35,6 +36,11 @@ export class EntryListComponent implements OnInit {
       //tap((data: any) => console.log(data.data[3].attributes.worked_time)),
       map((services: any) => services.data[3].attributes.name)
     ).subscribe(serviceName => this.serviceName = serviceName)
+  }
+
+  removeEntry(id: string) {
+    this.timeTrackerService.deleteEntry(id);
+    this.entries = this.entries?.filter( entry => entry.id !== id);
   }
 
 }

@@ -25,7 +25,7 @@ export class SpinnerInterceptor implements HttpInterceptor {
         // decrement when a req is completed (successful/failed both handled when using finalize operator)
         this.reqCount--;
         if (this.reqCount === 0) {
-          setTimeout( () => this.spinner.hide(), 300)
+          setTimeout( () => this.spinner.hide(), 200)
         }
 
       })

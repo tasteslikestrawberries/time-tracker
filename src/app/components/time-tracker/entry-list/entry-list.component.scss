@@ -7,20 +7,26 @@
 
 table {
   width: 100%;
-  background-color: #faf7fe;
-  border:none;
-  box-shadow: 5px 5px 10px 5px #edddfc;
+  //background-color: #faf7fe;
+  //border-collapse: collapse;
+  //box-shadow: 5px 5px 10px 5px #edddfc;
 }
 
 table td, table th {
   padding: 5px;
-  border: none;
+  //border: 1px solid #A246FF;
   text-align: center;
 }
 
 table thead {
   color: #fff;
   background-color: #A246FF;
+}
+
+.deleteBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @media (min-width: 800px) {

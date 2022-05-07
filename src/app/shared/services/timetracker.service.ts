@@ -40,7 +40,7 @@ export class TimetrackerService {
   getEntries() {
     return this.http
       .get(`${this.apiConfig.baseUrl}/organization_memberships/`, { headers: this.headers })
-      .pipe(switchMap((stream: any) => this.filterEntries(stream.data[0].relationships.person.data.id)))
+      .pipe(switchMap((stream: any) => this.filterEntries(stream.data[0].relationships.person.data.id)));
   }
 
   filterEntries(id: string) {
@@ -50,16 +50,16 @@ export class TimetrackerService {
   }
 
   getServices() {
-    return this.http.get('https://api.productive.io/api/v2/services', { headers: this.headers })
+    return this.http.get('https://api.productive.io/api/v2/services', { headers: this.headers });
   }
 
   addEntry(entry: IEntry) {
     this.http.post(`${this.apiConfig.baseUrl}/time_entries/${this.formattedCurrent}`, { headers: this.headers, body: entry })
-    .subscribe()
+    .subscribe();
   }
 
-  deleteEntry() {
-
+  deleteEntry(id: string) {
+    this.http.delete(`https://api.productive.io/api/v2/time_entries/${id}`, { headers: this.headers });
   }
 
 

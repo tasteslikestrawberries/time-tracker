@@ -17,6 +17,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpinnerInterceptor } from './shared/interceptors/spinner-interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     HeaderComponent,
     AddEntryComponent,
-    EntryListComponent
+    EntryListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

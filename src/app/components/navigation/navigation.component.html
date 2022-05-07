@@ -5,7 +5,10 @@
     <mat-toolbar>Menu</mat-toolbar>
 
     <mat-nav-list (click)="drawer.mode === 'over' && drawer.close()">
+      <div>
       <a mat-list-item routerLink="/" routerLinkActive="active">Dashboard</a>
+      <a mat-list-item routerLink="/about" routerLinkActive="active">About</a>
+    </div>
       <a mat-list-item routerLink="#" routerLinkActive="active">Log Out</a>
     </mat-nav-list>
 
@@ -28,7 +31,7 @@
  
     <mat-card class="mat-elevation-z8">
       <router-outlet></router-outlet>
-      <ngx-spinner bdColor = "rgba(237,232,232,0.27)" size = "medium" color = "#a246ff" type = "square-jelly-box" [fullScreen] = "true"></ngx-spinner>
+      <ngx-spinner bdColor = "rgba(0,0,0,0.4)" size = "medium" color = "#a246ff" type = "square-jelly-box" [fullScreen] = "true"></ngx-spinner>
     </mat-card>
 
   </mat-sidenav-content>
