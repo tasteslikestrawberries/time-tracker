@@ -30,7 +30,7 @@ form {
   margin-top: 1rem;
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1400px) {
   :host::ng-deep .mat-form-field[data-nameInput] {
     width: 400px;
   }
