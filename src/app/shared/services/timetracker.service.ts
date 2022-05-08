@@ -54,7 +54,7 @@ export class TimetrackerService {
   }
 
   addEntry(entry: IEntry) {
-    this.http.post(`${this.apiConfig.baseUrl}/time_entries/${this.formattedCurrent}`, { headers: this.headers, body: entry })
+    this.http.post(`${this.apiConfig.baseUrl}/time_entries/${this.formattedCurrent}`, {body: entry }, { headers: this.headers})
     .subscribe();
   }
 

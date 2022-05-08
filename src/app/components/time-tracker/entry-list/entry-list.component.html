@@ -9,10 +9,10 @@
       <th>Actions</th>
     </thead>
     <tbody *ngFor="let entry of entries">
-      <td>{{ entry.relationships.person.data.id }}</td>
-      <td>{{ entry.attributes.date }}</td>
-      <td>{{ entry.attributes.time }}</td>
-      <td>{{ entry.attributes.note ? entry.attributes.note : '/' }}</td>
+      <td>{{ entry.data.relationships.person.data.id }}</td>
+      <td>{{ entry.data.attributes.date }}</td>
+      <td>{{ entry.data.attributes.time }}</td>
+      <td>{{ entry.data.attributes.note ? entry.data.attributes.note : '/' }}</td>
       <td>{{ serviceName }}</td>
       <td><button class="deleteBtn" (click)="removeEntry(entry.id)"><mat-icon color="warn">delete_outline</mat-icon></button></td>
     </tbody>

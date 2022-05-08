@@ -1,19 +1,21 @@
 export interface IEntry {
   id: string,
-  attributes: {
-    note: string,
-    time: string,
-    date: string
-  },
-  relationships: {
-    person: {
-      data: {
-        id: string
-      }
+  data: {
+    attributes: {
+      note: string,
+      time: string,
+      date: string
     },
-    service: {
-      data: {
-        id: string
+    relationships: {
+      person: {
+        data: {
+          id: string
+        }
+      },
+      service: {
+        data: {
+          id: string
+        }
       }
     }
   }
@@ -21,13 +23,14 @@ export interface IEntry {
 
 export class EntryModel implements IEntry {
   id = '';
-  attributes = {
+  data = { 
+  attributes : {
     note: '',
     time: '',
     date: ''
-  };
+  },
 
-  relationships = {
+  relationships : {
     person: {
       data: {
         id: ''
@@ -38,15 +41,16 @@ export class EntryModel implements IEntry {
         id: ''
       }
     }
+  }
   };
 
   // object with key type string and value of any type intersecting with IEntry
   constructor(entry: Record<string, any> & IEntry) {
     this.id = entry.id;
-    this.attributes.note = entry.attributes.note;
-    this.attributes.time = entry.attributes.time;
-    this.attributes.date = entry.attributes.date;
-    this.relationships.person.data.id = entry.relationships.person.data.id;
-    this.relationships.service.data.id = entry.relationships.service.data.id;
+    this.data.attributes.note = entry.attributes.note;
+    this.data.attributes.time = entry.attributes.time;
+    this.data.attributes.date = entry.attributes.date;
+    this.data.relationships.person.data.id = entry.relationships.person.data.id;
+    this.data.relationships.service.data.id = entry.relationships.service.data.id;
   }
 }

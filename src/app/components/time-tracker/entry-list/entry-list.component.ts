@@ -21,7 +21,7 @@ export class EntryListComponent implements OnInit {
 
   fetchEntries() {
     this.timeTrackerService.getEntries().pipe(
-      //tap((v) => console.log(v)),
+      tap((v) => console.log(v)),
       // extracts data array from apiData object
       map((apiData: any) => apiData.data),
       // maps data array to EntryModel[]
