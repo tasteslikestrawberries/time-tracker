@@ -1,3 +1,5 @@
+import { apiKey } from "config/config";
 export const environment = {
-  production: true
+  production: true,
+  apiKey
 };
