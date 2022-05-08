@@ -1,4 +1,5 @@
-# ProductiveTimeTracker
+# TimeTracker
+![image](https://user-images.githubusercontent.com/73844750/167285939-8871ec7a-9931-4feb-aae0-1278bfe81685.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
